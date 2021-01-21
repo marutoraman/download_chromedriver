@@ -86,6 +86,7 @@ def check_driver():
         
         
 if __name__ == "__main__":
-    
-    check_mode = False if sys.argv[1]=="NOCHECK" else True if len(sys.argv)>=1 else True
+    check_mode = True
+    if len(sys.argv)>=2:
+        check_mode = False if sys.argv[1]=="NOCHECK" else True
     download_driver(check_mode)
